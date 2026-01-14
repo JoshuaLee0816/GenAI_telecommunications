@@ -1,8 +1,8 @@
 # src/llm_pipeline/analyzer.py
 
-from data_loader.models import Ticket
-from llm_pipeline.prompts import (SYSTEM_PROMPT, CATEGORY_PROMPT, PRIORITY_PROMPT)
-from rag.retriever import Retriever
+from src.data_loader.models import Ticket
+from src.llm_pipeline.prompts import (SYSTEM_PROMPT, CATEGORY_PROMPT, PRIORITY_PROMPT)
+from src.rag.retriever import Retriever
 from typing import Dict, Any
 import logging
 
