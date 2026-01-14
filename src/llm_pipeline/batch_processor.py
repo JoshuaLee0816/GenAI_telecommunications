@@ -1,8 +1,8 @@
 # src/llm_pipeline/batch_processor.py
 
 from typing import List, Dict, Any
-from src.data_loader.models import Ticket
-from src.llm_pipeline.analyzer import TicketAnalyzer
+from data_loader.models import Ticket
+from llm_pipeline.analyzer import TicketAnalyzer
 
 class BatchProcessor:
     def __init__(self, analyzer: TicketAnalyzer):

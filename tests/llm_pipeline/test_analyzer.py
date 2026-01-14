@@ -10,7 +10,9 @@ class DummyAnalyzer(TicketAnalyzer):
     def __init__(self):
         self.retriever = DummyRetriever()
         self.llm_model = "dummy"
-        self.validator = type('DummyValidator', (), {'validate_ticket': lambda self, t: None})()
+
+    def _validate_ticket(self, ticket):
+        pass
 
     def _query_llm(self, prompt: str) -> str:
         return '{"category": "network_issue", "priority": "HIGH", "recommended_action": "Restart the router."}'

@@ -1,7 +1,6 @@
 # src/llm_pipeline/analyzer.py
 
 from data_loader.models import Ticket
-from data_loader.validator import DataValidator
 from llm_pipeline.prompts import (SYSTEM_PROMPT, CATEGORY_PROMPT, PRIORITY_PROMPT)
 from rag.retriever import Retriever
 from typing import Dict, Any
@@ -16,11 +15,16 @@ class TicketAnalyzer:
     def __init__(self, knowledge_base_path: str, llm_model: str = "gemini"):
         self.retriever = Retriever(knowledge_base_path)
         self.llm_model = llm_model
-        self.validator = DataValidator()
+
+    def _validate_ticket(self, ticket: Ticket) -> None:
+        if not ticket.description or ticket.description.strip() == "":
+            raise ValueError("Description cannot be empty")
+        if ticket.category not in ["network_issue", "billing_issue", "equipment_issue"]:
+            raise ValueError("Invalid category")
 
     def analyze_ticket(self, ticket: Ticket) -> Dict[str, Any]:
 
-        self.validator.validate_ticket(ticket)
+        self._validate_ticket(ticket)
 
         context = self.retriever.query(ticket.description, top_k = 3)
 
