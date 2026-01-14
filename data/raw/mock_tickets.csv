@@ -1,0 +1,26 @@
+ticket_id,created_at,issue_summary,issue_description,service_type,affected_area,device_type,network_type,outage_flag,historical_ticket_count,priority_hint
+# --- Network Outage ---
+TICKET-101,2026-01-14,"Cannot connect to 5G network","Customer cannot access 5G in downtown area","mobile","Downtown","smartphone","5G",TRUE,2,"high"
+TICKET-102,2026-01-14,"Slow internet speed","Broadband speed slower than advertised","broadband","Suburb","modem","fiber",FALSE,1,"medium"
+TICKET-103,2026-01-14,"Wi-Fi disconnects frequently","Wi-Fi disconnects every 10 minutes","broadband","Uptown","router","fiber",FALSE,0,"medium"
+TICKET-104,2026-01-14,"Frequent call drops","Customer reports frequent dropped calls on 4G network","mobile","Downtown","smartphone","4G",FALSE,3,"high"
+TICKET-105,2026-01-14,"No 5G coverage at home","Customer cannot find 5G network at home","mobile","Suburb","smartphone","5G",TRUE,0,"high"
+
+# --- Billing Issues ---
+TICKET-201,2026-01-14,"Billing discrepancy","Customer charged twice for last month","billing","N/A","N/A","N/A",FALSE,1,"medium"
+TICKET-202,2026-01-14,"Refund not received","Customer requested refund but hasn't received it yet","billing","N/A","N/A","N/A",FALSE,0,"high"
+TICKET-203,2026-01-14,"Incorrect invoice amount","Invoice shows wrong total for current month","billing","N/A","N/A","N/A",FALSE,2,"medium"
+TICKET-204,2026-01-14,"Subscription cancellation issue","Customer tried to cancel subscription but still charged","billing","N/A","N/A","N/A",FALSE,1,"high"
+TICKET-205,2026-01-14,"Overcharge complaint","Customer claims overcharged for last service period","billing","N/A","N/A","N/A",FALSE,3,"medium"
+
+# --- Equipment Repair ---
+TICKET-301,2026-01-14,"Broken modem","Modem stopped working, no lights on","broadband","Suburb","modem","fiber",FALSE,0,"high"
+TICKET-302,2026-01-14,"Router overheating","Router gets very hot and shuts down","broadband","Uptown","router","fiber",FALSE,1,"medium"
+TICKET-303,2026-01-14,"Defective smartphone","Phone battery drains immediately after charge","mobile","Downtown","smartphone","5G",FALSE,2,"high"
+TICKET-304,2026-01-14,"Damaged network cable","Cable damaged during renovation","broadband","Suburb","cable","fiber",FALSE,0,"medium"
+TICKET-305,2026-01-14,"Router firmware failure","Router firmware corrupt after update","broadband","Uptown","router","fiber",FALSE,1,"medium"
+
+# --- Edge / Boundary Cases ---
+TICKET-401,2026-01-14,"Missing fields","No issue description provided","mobile","Downtown","","5G",TRUE,0,"high"
+TICKET-402,2026-01-14,"Strange characters in summary","Issue summary contains emojis 🤔⚡","broadband","Suburb","modem","fiber",FALSE,1,"medium"
+TICKET-403,2026-01-14,"Unknown service type","Service type field contains unexpected value","unknown","N/A","N/A","N/A",FALSE,0,"low"
