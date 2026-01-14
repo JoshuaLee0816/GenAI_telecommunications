@@ -17,7 +17,7 @@ class VectorStore:
 
         dim = embeddings.shape[1]
         self.index = faiss.IndexFlatL2(dim)
-        self.index.add(embeddings)
+        self.index.add(embeddings)   #type: ignore
 
         self.metadata = chunks
 
@@ -25,6 +25,6 @@ class VectorStore:
         if self.index is None:
             raise ValueError("Index is not built yet")
         query_vector = np.array([self.model.encode(text)]).astype("float32")
-        D, I = self.index.search(query_vector, top_k)
+        D, I = self.index.search(query_vector, top_k)   #type: ignore
         results = [self.metadata[i] for i in I[0]]
         return results  
