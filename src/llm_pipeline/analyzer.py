@@ -28,7 +28,7 @@ class TicketAnalyzer:
 
         llm_response = self._query_llm(prompt)
 
-        result = self._parse_response(llm_response)
+        result = self._parse_llm_output(llm_response)
         
         return result
     
