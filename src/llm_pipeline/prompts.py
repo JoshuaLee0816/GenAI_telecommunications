@@ -26,8 +26,8 @@ Rules:
 5. Maintain neutrality, do not provide personal opinions.
 """
 
-# 2. TASK / CLASSIFICATION PROMPTS
-TASK_PROMPTS = {
+# 2. CATEGORY PROMPTS
+CATEGORY_PROMPT = {
     "network_issue": """
 You are classifying and summarizing network-related tickets.
 Focus on:
@@ -68,8 +68,8 @@ Rules:
 def get_system_prompt() -> str:
     return SYSTEM_PROMPT
 
-def get_task_prompt(category: str) -> str:
-    return TASK_PROMPTS.get(category, "Use general instruction for unknown category.")
+def get_category_prompt(category: str) -> str:
+    return CATEGORY_PROMPT.get(category, "Use general instruction for unknown category.")
 
 def get_priority_prompt() -> str:
     return PRIORITY_PROMPT
