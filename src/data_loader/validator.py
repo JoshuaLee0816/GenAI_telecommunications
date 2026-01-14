@@ -52,4 +52,3 @@ class DataValidator:
         self.validate_non_empty()
         self.validate_duplicates()
         return self.errors
-    
