@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Environment
+.env
+.env.local
+*.env
+
+# Logs
+logs/
+*.log
+
+# Cache
+.cache/
+.chroma/
+*.pkl
+*.pickle
+
+# AI/Agent 相關 (不上傳)
+agents/
+memory_bank/
+
+# 暫存與測試輸出
+*.tmp
+*.temp
+evaluation/results/
+
+# API Keys
+*credentials*
+*secret*

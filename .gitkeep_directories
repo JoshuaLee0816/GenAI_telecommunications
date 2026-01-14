@@ -1,0 +1,27 @@
+# 此檔案說明各空目錄的用途
+# Git 不追蹤空目錄，但這些目錄是專案結構的一部分
+
+## src/ 子目錄
+- src/data_loader/: 資料載入與驗證邏輯
+- src/rag/: RAG 檢索管線
+- src/llm_pipeline/: LLM 調用與管理
+- src/output_handler/: 輸出格式化與驗證
+- src/utils/: 共用工具函數
+
+## data/ 子目錄
+- data/raw/: 原始工單資料（CSV）
+- data/processed/: 處理後的資料
+- data/knowledge_base/: 知識庫文件
+
+## evaluation/ 子目錄
+- evaluation/datasets/: 帶標註的評估資料集
+- evaluation/results/: 評估執行結果
+
+## 其他目錄
+- docs/: 技術文件與設計紀錄
+- logs/: 執行日誌（不進版控）
+- tests/: 測試程式
+
+## agents/ 子目錄
+- agents/definitions/: Agent 定義文件
+- agents/prompts/: Agent Prompt 模板（如需要）
