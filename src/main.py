@@ -1,9 +1,9 @@
 # src/main.py
 
 from typing import List
-from src.data_loader.models import Ticket
-from src.llm_pipeline.analyzer import TicketAnalyzer
-from src.llm_pipeline.batch_processor import BatchProcessor
+from data_loader.models import Ticket
+from llm_pipeline.analyzer import TicketAnalyzer
+from llm_pipeline.batch_processor import BatchProcessor
 
 def load_tickets() -> List[Ticket]:
     """

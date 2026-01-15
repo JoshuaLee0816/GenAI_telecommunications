@@ -43,18 +43,18 @@ def test_process_tickets_success(batch_processor: BatchProcessor):
     assert results[1]["priority"] == "high"
 
 def test_process_tickets_with_errors(batch_processor: BatchProcessor):
+    # 使用無效 category 測試錯誤處理（空描述會被 Pydantic 擋住）
     tickets: List[Ticket] = [
-        Ticket(ticket_id=1, category="network_issue", description="", timestamp="2026-01-14 10:00:00"),
-        Ticket(ticket_id=2, category="invalid_category", description="Something wrong", timestamp="2026-01-14 11:00:00")
+        Ticket(ticket_id=1, category="invalid_category", description="Some issue", timestamp="2026-01-14 10:00:00"),
+        Ticket(ticket_id=2, category="unknown_type", description="Another issue", timestamp="2026-01-14 11:00:00")
     ]
     results = batch_processor.process_tickets(tickets)
 
     assert len(results) == 2
-    # First ticket fails due to empty description
+    # Both tickets fail due to invalid category
     assert "error" in results[0]
     assert results[0]["ticket_id"] == 1
-    assert "Description cannot be empty" in results[0]["error"]
-    # Second ticket fails due to invalid category
+    assert "Invalid category" in results[0]["error"]
     assert "error" in results[1]
     assert results[1]["ticket_id"] == 2
     assert "Invalid category" in results[1]["error"]
